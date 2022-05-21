@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}BlogList{% endblock %}
+
+{% block content %}
+
+
+{% for post in object_list %}
+
+<div class='container-fluid' class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5><a href="{% url 'article_detail' post.pk %}" class="card-title">{{post.title}}</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{post.author}} / ({{post.post_date}})</h6>
+      <p class="card-text">{{post.body}}</p>
+      <a href="{% url 'update_post' post.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+      <a href="{% url 'delete_post' post.pk %}" class="btn btn-secondary btn-sm">Delete</a>
+    </div>
+  </div>
+  {% endfor %}
+
+    
+
+
+
+{% endblock %}
