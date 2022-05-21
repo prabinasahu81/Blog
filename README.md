@@ -1,2 +1,2 @@
 # Blog
-Django blog post
+Django blogpost assignment
